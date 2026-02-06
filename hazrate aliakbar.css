@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: rgb(138, 197, 197);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 22px;
+  color: black;
+}
+
+/* ================= FEATURES ================= */
+
+.features {
+  position: absolute;
+  left: 60px;
+  top: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.feature i {
+  font-size: 20px;
+  color: rgb(139, 145, 54);
+}
+
+/* ================= GALLERY ================= */
+
+.gallery {
+  position: relative;
+  height: 70vh;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 240px;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.card:nth-child(1) { left: 65%; z-index: 1; }
+.card:nth-child(2) { left: 59%; z-index: 2; }
+.card:nth-child(3) { left: 53%; z-index: 3; }
+.card:nth-child(4) { left: 56%; z-index: 2; }
+.card:nth-child(5) { left: 62%; z-index: 1; }
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: translateY(-20px) scale(1.08);
+  z-index: 10;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+
+/* ================= ARROW LABEL ================= */
+
+.arrow-label {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  background: rgb(138, 197, 197);
+  color: black;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.arrow-label::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 15px solid rgb(138, 197, 197);;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* ================= BUTTON ================= */
+
+.button-shik {
+  padding: 15px 40px;
+  border: 1px solid black;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: -900px;
+  margin-left: 50px;
+  margin-right: 550px;
+  margin-bottom: -900px;
+  
+}
+
+.button-shik:hover {
+  background: black;
+  color: rgb(138, 197, 197);
+}
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .features {
+    display: none;
+  }
+
+  .gallery {
+    height: auto;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .card {
+    position: relative;
+    left: auto !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 90%;
+    height: 380px;
+  }
+
+  .arrow-label {
+    font-size: 12px;
+  }
+}
